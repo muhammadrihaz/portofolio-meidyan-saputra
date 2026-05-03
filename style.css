@@ -1,0 +1,75 @@
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+}
+
+/* Text selection */
+::selection {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Gallery filter animation */
+.gallery-item {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+}
+
+.gallery-item.hidden {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+/* Form input focus effect */
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Back to top button animation */
+#backToTop {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#backToTop.show {
+    opacity: 1;
+}
+
+/* Mobile menu toggle */
+#mobile-menu.show {
+    display: block;
+}
+
+/* Smooth transitions */
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}
+
+/* Filter button active state */
+.filter-btn.active {
+    background-color: #2563eb;
+    color: white;
+}

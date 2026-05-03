@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meidyan Saputra - Educator & Mentor</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+        }
+      }
+
+      @keyframes slide-up {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes blob {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+      }
+
+      .float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .glow {
+        animation: glow 2s ease-in-out infinite;
+      }
+
+      .slide-up {
+        animation: slide-up 0.6s ease-out;
+      }
+
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+
+      .animation-delay-0 {
+        animation-delay: 0s;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+
+      .glass-effect {
+        background: rgba(17, 24, 39, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #3b82f6 0%,
+          #8b5cf6 50%,
+          #06b6d4 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hover-scale {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-scale:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+      }
+
+      .skill-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.5);
+        border-radius: 50px;
+        color: #3b82f6;
+        font-size: 0.875rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill-badge:hover {
+        background: rgba(59, 130, 246, 0.2);
+        border-color: #3b82f6;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-200 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+      class="glass-effect fixed w-full top-0 z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="text-2xl font-bold gradient-text">MS</div>
+
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex gap-8">
+            <li>
+              <a
+                href="#home"
+                class="nav-link text-gray-300 hover:text-blue-400 transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="nav-link text-gray-300 hover:text-blue-400 transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="nav-link text-gray-300 hover:text-blue-400 transition"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#gallery"
+                class="nav-link text-gray-300 hover:text-blue-400 transition"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="nav-link text-gray-300 hover:text-blue-400 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul
+          id="mobile-menu"
+          class="hidden md:hidden pb-4 border-t border-gray-700"
+        >
+          <li class="py-2">
+            <a href="#home" class="text-gray-300 hover:text-blue-400">Home</a>
+          </li>
+          <li class="py-2">
+            <a href="#about" class="text-gray-300 hover:text-blue-400">About</a>
+          </li>
+          <li class="py-2">
+            <a href="#projects" class="text-gray-300 hover:text-blue-400"
+              >Projects</a
+            >
+          </li>
+          <li class="py-2">
+            <a href="#gallery" class="text-gray-300 hover:text-blue-400"
+              >Gallery</a
+            >
+          </li>
+          <li class="py-2">
+            <a href="#contact" class="text-gray-300 hover:text-blue-400"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+    >
+      <!-- Animated Background -->
+      <div class="absolute inset-0 -z-10">
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-0"
+        ></div>
+        <div
+          class="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+        ></div>
+        <div
+          class="absolute bottom-20 left-1/2 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+        ></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Left Side -->
+          <div class="slide-up">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+              Hi, I&apos;m <span class="gradient-text">Meidyan</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-4">
+              Educator & Mentor
+            </p>
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+              Dedicated to creating engaging learning experiences and shaping
+              the future through quality education.
+            </p>
+            <div class="flex gap-4 flex-wrap">
+              <a
+                href="#contact"
+                class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition transform hover:scale-105"
+              >
+                Get in Touch
+              </a>
+              <a
+                href="#about"
+                class="px-8 py-3 border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 font-semibold rounded-lg transition"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Side - Profile Image -->
+          <div
+            class="relative float"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <div class="relative w-full aspect-square">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl opacity-20 blur-2xl"
+              ></div>
+              <div
+                class="relative w-full h-full bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl p-1"
+              >
+                <div
+                  class="w-full h-full bg-gray-800 rounded-xl flex items-center justify-center overflow-hidden"
+                >
+                  <img
+                    src="public/img/1.jpeg"
+                    alt="Meidyan Saputra"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-4xl md:text-5xl font-bold mb-12 gradient-text"
+          data-aos="fade-up"
+        >
+          About Me
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Left - Bio -->
+          <div data-aos="fade-right" data-aos-delay="100">
+            <h3 class="text-2xl font-bold mb-4 text-white">
+              Meidyan Saputra, S.Pd., Gr.
+            </h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              Lahir di Palembang pada tanggal 09 Mei 1999. Sebagai pendidik yang
+              berdedikasi, saya berkomitmen untuk meningkatkan kualitas
+              pendidikan di lingkungan tempat saya mengabdi.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              Dengan latar belakang pendidikan di bidang kependidikan, saya
+              berupaya menciptakan suasana pembelajaran yang aktif,
+              menyenangkan, dan bermakna bagi peserta didik.
+            </p>
+
+            <!-- Biodata -->
+            <div class="mt-8 space-y-3">
+              <p class="text-sm">
+                <span class="text-blue-400 font-semibold"
+                  >Tempat, Tanggal Lahir:</span
+                >
+                Palembang, 09 Mei 1999
+              </p>
+              <p class="text-sm">
+                <span class="text-blue-400 font-semibold">Jenis Kelamin:</span>
+                Laki-laki
+              </p>
+              <p class="text-sm">
+                <span class="text-blue-400 font-semibold"
+                  >Kewarganegaraan:</span
+                >
+                Indonesia
+              </p>
+              <p class="text-sm">
+                <span class="text-blue-400 font-semibold">Agama:</span> Islam
+              </p>
+              <p class="text-sm">
+                <span class="text-blue-400 font-semibold">Pekerjaan:</span> Guru
+              </p>
+            </div>
+          </div>
+
+          <!-- Right - Motto & Hobbies -->
+          <div data-aos="fade-left" data-aos-delay="100">
+            <!-- Motto Card -->
+            <div
+              class="bg-gradient-to-br from-blue-500 to-purple-600 p-8 rounded-2xl mb-8 hover-scale"
+            >
+              <h4 class="text-xl font-bold text-white mb-4">Moto Hidup</h4>
+              <p class="text-lg text-white italic leading-relaxed">
+                &quot;Menanamkan disiplin, menguatkan tubuh, dan membentuk
+                karakter untuk masa depan.&quot;
+              </p>
+              <p class="text-gray-100 mt-4 text-sm">
+                Saya percaya dengan menjunjung tinggi disiplin hari ini,
+                prestasi akan mengikuti di kemudian hari.
+              </p>
+            </div>
+
+            <!-- Interests -->
+            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+              <h4 class="text-xl font-bold text-white mb-4">Minat & Hobi</h4>
+              <ul class="space-y-2 text-gray-300">
+                <li class="flex items-center gap-3">
+                  <span class="text-cyan-400">●</span>
+                  <span>Sepakbola</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="text-cyan-400">●</span>
+                  <span>Badminton</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="text-cyan-400">●</span>
+                  <span>Pengembangan Pembelajaran</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="text-cyan-400">●</span>
+                  <span>Pembinaan Karakter</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="mt-16" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-bold mb-8 text-white">
+            Kompetensi & Keahlian
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-badge">Pedagogis</span>
+            <span class="skill-badge">Kurikulum</span>
+            <span class="skill-badge">Manajemen Kelas</span>
+            <span class="skill-badge">Evaluasi Pembelajaran</span>
+            <span class="skill-badge">Mentoring</span>
+            <span class="skill-badge">Coaching</span>
+            <span class="skill-badge">Kepemimpinan</span>
+            <span class="skill-badge">Pengembangan Diri</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-4xl md:text-5xl font-bold mb-12 gradient-text"
+          data-aos="fade-up"
+        >
+          Pengalaman & Pencapaian
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div class="group hover-scale" data-aos="fade-up" data-aos-delay="0">
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden"
+              >
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-white text-center">
+                    <div class="text-4xl font-bold mb-2">📚</div>
+                    <p class="text-sm">Pengalaman Mengajar</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Pengalaman Mengajar
+                </h3>
+                <p class="text-gray-400 text-sm mb-4">
+                  Menciptakan pengalaman pembelajaran yang interaktif dan
+                  bermakna bagi ribuan siswa.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                  <span
+                    class="text-xs bg-blue-900 text-blue-200 px-3 py-1 rounded-full"
+                    >Pedagogis</span
+                  >
+                  <span
+                    class="text-xs bg-purple-900 text-purple-200 px-3 py-1 rounded-full"
+                    >Mentoring</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div
+            class="group hover-scale"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 relative overflow-hidden"
+              >
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-white text-center">
+                    <div class="text-4xl font-bold mb-2">🏆</div>
+                    <p class="text-sm">Pengembangan Kurikulum</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Pengembangan Kurikulum
+                </h3>
+                <p class="text-gray-400 text-sm mb-4">
+                  Merancang dan mengembangkan materi pembelajaran yang sesuai
+                  dengan kebutuhan era modern.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                  <span
+                    class="text-xs bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full"
+                    >Kurikulum</span
+                  >
+                  <span
+                    class="text-xs bg-blue-900 text-blue-200 px-3 py-1 rounded-full"
+                    >Inovasi</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div
+            class="group hover-scale"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden"
+              >
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-white text-center">
+                    <div class="text-4xl font-bold mb-2">⭐</div>
+                    <p class="text-sm">Pembinaan Karakter</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Pembinaan Karakter
+                </h3>
+                <p class="text-gray-400 text-sm mb-4">
+                  Membimbing siswa dalam pengembangan nilai-nilai moral dan
+                  etika melalui berbagai kegiatan.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                  <span
+                    class="text-xs bg-purple-900 text-purple-200 px-3 py-1 rounded-full"
+                    >Karakter</span
+                  >
+                  <span
+                    class="text-xs bg-pink-900 text-pink-200 px-3 py-1 rounded-full"
+                    >Kepemimpinan</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="books" class="py-18 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Title -->
+        <h2
+          class="text-4xl md:text-5xl font-bold mb-16 gradient-text"
+          data-aos="fade-up"
+        >
+          Buku Saya
+        </h2>
+
+        <!-- Wrapper biar center -->
+        <div class="flex justify-center">
+          <!-- Card -->
+          <div
+            class="group hover-scale cursor-pointer w-full max-w-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <a
+              href="https://heyzine.com/flip-book/5656353472.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                class="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 transition duration-300 shadow-lg hover:shadow-yellow-500/20"
+              >
+                <!-- Cover -->
+                <div
+                  class="relative h-72 flex items-center justify-center bg-gradient-to-br from-dark-400 to-gray-500 p-4"
+                >
+                  <img
+                    src="public/cover.png"
+                    alt="Cover Buku"
+                    class="h-full object-contain rounded-lg shadow-xl group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+
+                <!-- Content -->
+                <div class="p-6 text-left">
+                  <h3 class="text-xl font-bold text-white mb-3">
+                    Buku Digital Interaktif
+                  </h3>
+
+                  <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                    Buku digital yang saya buat untuk mendukung pembelajaran
+                    interaktif dan mudah diakses oleh siswa.
+                  </p>
+
+                  <div class="flex gap-2 flex-wrap mb-4">
+                    <span
+                      class="text-xs bg-yellow-900 text-yellow-200 px-3 py-1 rounded-full"
+                    >
+                      E-Book
+                    </span>
+                    <span
+                      class="text-xs bg-orange-900 text-orange-200 px-3 py-1 rounded-full"
+                    >
+                      Digital
+                    </span>
+                  </div>
+
+                  <p
+                    class="text-yellow-400 text-sm font-medium group-hover:underline"
+                  >
+                    Lihat Buku →
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-4xl md:text-5xl font-bold mb-8 gradient-text"
+          data-aos="fade-up"
+        >
+          Galeri
+        </h2>
+
+        <!-- Filter Buttons -->
+        <div
+          class="flex flex-wrap gap-3 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <button
+            class="filter-btn active px-6 py-2 rounded-full bg-blue-600 text-white font-semibold transition"
+            data-filter="all"
+          >
+            Semua
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full bg-gray-700 text-gray-300 font-semibold hover:bg-blue-600 hover:text-white transition"
+            data-filter="teaching"
+          >
+            Mengajar
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full bg-gray-700 text-gray-300 font-semibold hover:bg-blue-600 hover:text-white transition"
+            data-filter="sports"
+          >
+            Olahraga
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full bg-gray-700 text-gray-300 font-semibold hover:bg-blue-600 hover:text-white transition"
+            data-filter="events"
+          >
+            Acara
+          </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Gallery Items -->
+          <!-- 2 - 20 -->
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/2.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/3.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/4.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/5.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/6.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/7.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/8.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/9.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/10.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/11.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/12.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/13.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/14.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/15.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/16.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/17.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/18.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/19.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+
+          <div
+            class="gallery-item group cursor-pointer overflow-hidden rounded-xl"
+            data-category="teaching"
+            data-aos="fade-up"
+          >
+            <div class="relative h-64 overflow-hidden bg-gray-700 rounded-xl">
+              <img
+                src="public/img/20.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-4xl md:text-5xl font-bold mb-8 gradient-text text-center"
+          data-aos="fade-up"
+        >
+          Hubungi Saya
+        </h2>
+        <p
+          class="text-center text-gray-300 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Siap untuk berkolaborasi atau memiliki pertanyaan? Silakan hubungi
+          saya!
+        </p>
+
+        <!-- Contact Info Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <!-- Phone Card -->
+          <div class="hover-scale" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center"
+            >
+              <div class="text-3xl mb-4">📱</div>
+              <h3 class="text-lg font-bold text-white mb-2">Telepon</h3>
+              <p class="text-gray-400">+62 xxx xxxx xxxx</p>
+            </div>
+          </div>
+
+          <!-- Email Card -->
+          <div class="hover-scale" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center"
+            >
+              <div class="text-3xl mb-4">✉️</div>
+              <h3 class="text-lg font-bold text-white mb-2">Email</h3>
+              <p class="text-gray-400">meidyan@email.com</p>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="hover-scale" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center"
+            >
+              <div class="text-3xl mb-4">📍</div>
+              <h3 class="text-lg font-bold text-white mb-2">Lokasi</h3>
+              <p class="text-gray-400">Palembang, Indonesia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg hidden z-40 transition transform hover:scale-110"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Branding -->
+          <div>
+            <h3 class="text-2xl font-bold gradient-text mb-2">MS</h3>
+            <p class="text-gray-400">Meidyan Saputra - Educator & Mentor</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white font-semibold mb-4">Tautan Cepat</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="hover:text-blue-400 transition"
+                  >Tentang</a
+                >
+              </li>
+              <li>
+                <a href="#gallery" class="hover:text-blue-400 transition"
+                  >Galeri</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-blue-400 transition"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Links -->
+          <div>
+            <h4 class="text-white font-semibold mb-4">Media Sosial</h4>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-blue-400 transition text-sm"
+                >Facebook</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-blue-400 transition text-sm"
+                >Instagram</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-blue-400 transition text-sm"
+                >LinkedIn</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-blue-400 transition text-sm"
+                >Twitter</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm"
+        >
+          <p>&copy; 2024 Meidyan Saputra. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Toast Notification -->
+    <div
+      id="toast"
+      class="fixed bottom-8 left-8 bg-green-600 text-white px-6 py-3 rounded-lg hidden shadow-lg transition"
+    >
+      <p id="toastMessage"></p>
+    </div>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
